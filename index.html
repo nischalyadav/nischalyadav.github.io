@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nischal Yadav | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --bg-dark: #0f1113;
+    --bg-light: #1b1d20;
+    --text: #ffffff;
+    --muted: #b5b5b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    scroll-behavior: smooth;
+   
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(15,17,19,.95);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    padding: 0 10%;
+    list-style: none;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 20px;
+    transition: .3s;
+}
+
+nav a.active,
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 0px 10%;
+}
+
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0,0,0,.9), rgba(250, 248, 248, 0)),
+    url("vIFi1uQpSgWmROog3m_Z4w.webp") center/cover;
+}
+
+.hero h1 {
+    font-size: 82px;
+    line-height: 1;
+}
+
+.hero span {
+    display: block;
+    font-weight: 300;
+}
+
+.hero p {
+    margin: 15px 0 30px;
+    color: var(--muted);
+}
+
+.hero button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero button:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+
+.about {
+    background: var(--bg-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    align-items: center;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+    font-size: 60px;
+    
+}
+
+.about p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 6px;
+  filter:
+    drop-shadow(0 0 8px #fff)
+    drop-shadow(0 0 16px #ffffff)
+    drop-shadow(0 0 30px #fff);
+}
+
+    
+@media (max-width: 768px) {
+
+  .about {
+    grid-template-columns: 1fr; /* single column */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about img {
+    order: -1; /* image comes first */
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .about h2 {
+    font-size: 42px;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  nav ul {
+    flex-wrap: wrap;           /* allow wrapping */
+    justify-content: center;   /* center links */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 0 7%;
+  }
+
+  .hero {
+    padding-top: 120px; /* space below navbar */
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .hero span {
+    font-size: 54px;
+  }
+
+}
+
+
+
+.item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 12px;
+    height: auto;
+}
+
+ .games {
+  padding: 80px 10%;
+  background: var(--bg-d);
+}
+
+.section-title {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  
+}
+
+.game-card {
+  background: #121418;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   transition: all 0.5s ease;
+  
+}
+
+.game-card:hover {
+  transform: translateY(-28px);
+  background-color: #77656d;
+
+}
+
+.game-card img {
+  width: auto;
+  height: 180px;
+}
+
+.game-content {
+  padding: 20px;
+}
+
+.game-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  color: #6ee7ff;
+  margin-bottom: 10px;
+}
+
+.game-content p {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
+ .process {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.process h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.process .subtitle {
+  color: #b5b5b5;
+  margin-bottom: 60px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+.process-steps::before {
+  content: "";
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.step {
+  position: relative;
+}
+
+.number {
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #4f9cff;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 14px;
+  color: #b5b5b5;
+}
+
+
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact {
+    padding: 80px 10%;
+    background: #121418;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+
+  .contact p {
+    font-size: 16px;
+    color: #b5b5b5;
+    margin-bottom: 40px;
+  }
+
+  .contact-box {
+    max-width: 450px;
+    margin: auto;
+    background: #1b1d20;
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  .contact-item {
+    margin-bottom: 25px;
+  }
+
+  .contact-item span {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .contact-item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .contact-item a:hover {
+    color: #0095ff;
+  }
+
+  @media (max-width: 600px) {
+    .contact h2 {
+      font-size: 32px;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#home" class="nav-link active">Home</a></li>
+<li><a href="#about" class="nav-link">About</a></li>
+<li><a href="#resume" class="nav-link">Resume</a></li>
+<li><a href="#resume" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+
+
+<section id="home" class="hero">
+<div>
+<h1><span>NISCHAL</span>YADAV</h1>
+<p>I’m a vibe-focused front-end developer who builds clean, interactive, and <br>visually smooth web experiences. I care about design feel just as much as code logic. <br> If it looks right and feels right, I’m winning.</p>
+<button onclick="scrollToSection('resume')">Resume</button>
+<button onclick="scrollToSection('about')">About</button>
+</div>
+
+</section>
+
+
+<section id="about" class="about">
+<div>
+<h2>About</h2>
+<p>
+My name is Nischal Yadav, I am 15 years old, and I come from India, specifically the city of Indore, which is known for its culture, food, and growing tech vibe. I am a curious and motivated student who enjoys learning new things, especially in the field of technology and web development. From a young age, I have been interested in how websites work, how designs come together, and how code can turn ideas into real, usable products. I like experimenting with HTML, CSS, and JavaScript, and I’m constantly trying to improve my skills by building small projects and exploring modern design trends.
+</p>
+</div>
+<img src="my_img-removebg-preview.png" alt="" srcset="">
+</section>
+
+
+<section class="process">
+  <h2>Proven process for success</h2>
+  <p class="subtitle"> I help you on every step of the journey</p>
+
+  <div class="process-steps">
+    <div class="step">
+      <span class="number">01</span>
+      <span class="dot"></span>
+      <h3>Contact me</h3>
+      <p>Discuss project ideas and goals to start the journey.</p>
+    </div>
+
+    <div class="step">
+      <span class="number">02</span>
+      <span class="dot"></span>
+      <h3>Research</h3>
+      <p>Understand requirements and plan the best solution.</p>
+    </div>
+
+    <div class="step">
+      <span class="number">03</span>
+      <span class="dot"></span>
+      <h3>Work</h3>
+      <p>Design and develop with clean and efficient code.</p>
+    </div>
+
+    <div class="step">
+      <span class="number">04</span>
+      <span class="dot"></span>
+      <h3>Test & results</h3>
+      <p>Test everything and deliver the final result.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="games" id="resume">
+  <h2 class="section-title">Programming Skills</h2>
+
+  <div class="game-grid">
+
+    <div class="game-card">
+      <img src="html css s.png" alt="Game 1">
+      <div class="game-content">
+        <h3>HTML,CSS and JavaScript</h3>
+        <span class="tag"></span>
+        <p>
+          HTML, CSS, and JavaScript work together to build modern websites.
+HTML creates the structure and content of a web page.
+CSS styles the page by controlling layout, colors, and design.
+JavaScript adds interactivity and dynamic behavior for users.
+        </p>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="icons8-python-480.png" alt="Game 2">
+      <div class="game-content">
+        <h3>Python</h3>
+        <span class="tag"></span>
+        <p>
+          Python is a high-level, easy-to-read programming language.
+It is widely used in web development, data science, and AI.
+Python focuses on simplicity and productivity.
+It is popular among beginners and professionals alike.
+        </p>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="pngwing.com.png" alt="Game 3">
+      <div class="game-content">
+        <h3>Java</h3>
+        <span class="tag"></span>
+        <p>
+         Java is a powerful, object-oriented programming language.
+It is commonly used for Android apps and large systems.
+Java follows the “write once, run anywhere” principle.
+It is known for reliability, security, and performance.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out to me anytime</p>
+
+  <div class="contact-box">
+    <div class="contact-item">
+      <span>Phone</span>
+      <a href="tel:+917869799414">+91 7869799414</a>
+    </div>
+
+    <div class="contact-item">
+      <span>Email</span>
+      <a href="mailto:nischalyadav1983@gmail.com">
+        nischalyadav1983@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+const skillBars = document.querySelectorAll(".bar span");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        if (top >= sec.offsetTop - 150) {
+            current = sec.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+
+    
+    const resume = document.getElementById("resume");
+    if (window.scrollY >= resume.offsetTop - 300) {
+        skillBars.forEach(bar => {
+            bar.style.width = bar.dataset.width;
+        });
+    }
+});
+</script>
+
+</body>
+</html>
